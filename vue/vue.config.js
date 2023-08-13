@@ -1,0 +1,108 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+module.exports = {
+    configureWebpack: config => {
+      if (process.env.NODE_ENV === 'production') {
+        return {
+            plugins:[
+                new CopyWebpackPlugin([{
+                    from:'node_modules/@aspnet/signalr/dist/browser/signalr.min.js',
+                    to:'dist'
+                },{
+                    from:'node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js',
+                    to:'dist'
+                },{
+                    from:'src/lib/abp.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/jquery.min.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/bootstrap.min.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/cascading-select.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/owl.carousel.min.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/onpagescroll.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/wow.min.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/jquery.event.move.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/jquery.twentytwenty.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/fancybox/jquery.fancybox.min.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/theme.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/custom.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/main.js',
+                    to:'dist'
+                }])
+            ]
+        }
+      } else {
+        return {
+            plugins:[
+                new CopyWebpackPlugin([{
+                    from:'node_modules/@aspnet/signalr/dist/browser/signalr.min.js',
+                    to:'dist'
+                },{
+                    from:'node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js',
+                    to:'dist'
+                },{
+                    from:'src/lib/abp.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/jquery.min.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/bootstrap.min.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/cascading-select.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/owl.carousel.min.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/onpagescroll.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/wow.min.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/jquery.event.move.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/jquery.twentytwenty.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/fancybox/jquery.fancybox.min.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/theme.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/custom.js',
+                    to:'dist'
+                },{
+                    from:'src/assets/js/main.js',
+                    to:'dist'
+                }])
+            ]
+        }
+      }
+    }
+}
